@@ -45,6 +45,7 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(QuizActivity.this, ScoreActivity.class);
+
                 myIntent.putExtra("result", mScore );
                 startActivity(myIntent);
 
