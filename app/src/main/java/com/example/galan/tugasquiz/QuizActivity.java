@@ -83,7 +83,7 @@ public class QuizActivity extends AppCompatActivity {
             public void onClick(View view){
                 String xs = sAnswer.getText().toString();
 
-                if (xs.equals(mAnswer)){
+                if (xs.equalsIgnoreCase(mAnswer)){
                     mScore = mScore + 10;
                     updateScore(mScore);
                     updateQuestion();
