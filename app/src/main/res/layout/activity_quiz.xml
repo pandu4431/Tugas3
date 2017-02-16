@@ -88,6 +88,14 @@
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true" />
+
+            <Button
+                android:text="Check Score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/next"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/scorecek" />
         </RelativeLayout>
     </LinearLayout>
 

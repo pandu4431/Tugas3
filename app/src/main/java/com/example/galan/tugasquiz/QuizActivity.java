@@ -1,6 +1,7 @@
 package com.example.galan.tugasquiz;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ public class QuizActivity extends AppCompatActivity {
     private EditText sAnswer;
     private Button mNext;
     private Button mPrev;
+    private Button mCek;
 
     private String mAnswer;
     private int mScore = 0;
@@ -36,7 +38,18 @@ public class QuizActivity extends AppCompatActivity {
         sAnswer = (EditText) findViewById(R.id.jawaban);
         mNext = (Button) findViewById(R.id.next);
         mPrev = (Button) findViewById(R.id.back);
+        mCek = (Button) findViewById(R.id.scorecek);
         updateQuestion();
+
+        mCek.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(QuizActivity.this, ScoreActivity.class);
+                myIntent.putExtra("result", mScore );
+                startActivity(myIntent);
+
+            }
+        });
 
         mNext.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -81,6 +94,9 @@ public class QuizActivity extends AppCompatActivity {
         if (mQuestinNumber !=4) {
             mQuestinNumber++;
         }else {
+
+
+
             Toast.makeText(QuizActivity.this, "SELAMAT, SUDAH SELESAI, POIN ANDA", Toast.LENGTH_SHORT).show();
             AlertDialog.Builder builders = new AlertDialog.Builder(QuizActivity.this);
             builders.setMessage("Apakah Anda Ingin Mengulanginya ?");
