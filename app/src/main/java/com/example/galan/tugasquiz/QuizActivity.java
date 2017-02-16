@@ -41,11 +41,18 @@ public class QuizActivity extends AppCompatActivity {
         mCek = (Button) findViewById(R.id.scorecek);
         updateQuestion();
 
+        sAnswer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sAnswer.getText().clear();
+            }
+        });
+
+
         mCek.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(QuizActivity.this, ScoreActivity.class);
-
                 myIntent.putExtra("result", mScore );
                 startActivity(myIntent);
 
@@ -80,6 +87,7 @@ public class QuizActivity extends AppCompatActivity {
                     mScore = mScore + 10;
                     updateScore(mScore);
                     updateQuestion();
+                    sAnswer.getText().clear();
 
                     Toast.makeText(QuizActivity.this, "CORRECT ANSWER, GOOD", Toast.LENGTH_SHORT).show();
                 }else{
@@ -95,8 +103,9 @@ public class QuizActivity extends AppCompatActivity {
         if (mQuestinNumber !=4) {
             mQuestinNumber++;
         }else {
-
-
+            Intent myIntent = new Intent(QuizActivity.this, ScoreActivity.class);
+            myIntent.putExtra("result", mScore );
+            startActivity(myIntent);
 
             Toast.makeText(QuizActivity.this, "SELAMAT, SUDAH SELESAI, POIN ANDA", Toast.LENGTH_SHORT).show();
             AlertDialog.Builder builders = new AlertDialog.Builder(QuizActivity.this);

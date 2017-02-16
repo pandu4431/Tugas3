@@ -11,20 +11,21 @@
     tools:context="com.example.galan.tugasquiz.ScoreActivity">
 
     <TextView
-        android:text="CONGRATULATIONS"
+        android:text="CONGRATULATIONS\nYOUR SCORE IS:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:textAlignment="center"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="49dp"
         android:id="@+id/textView" />
 
     <Button
-        android:text="Button"
+        android:text="Back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="174dp"
-        android:id="@+id/button"
+        android:id="@+id/backtomain"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true" />
 
