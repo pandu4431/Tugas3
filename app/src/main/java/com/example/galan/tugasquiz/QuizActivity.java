@@ -23,6 +23,7 @@ public class QuizActivity extends AppCompatActivity {
     private Button mPrev;
     private Button mCek;
     private TextView mblank;
+    private TextView mPaf;
 
     private String mAnswer;
     private int mScore = 0;
@@ -37,6 +38,7 @@ public class QuizActivity extends AppCompatActivity {
         mButtonChoices1 = (Button) findViewById(R.id.submit);
         sAnswer = (EditText) findViewById(R.id.jawaban);
         mblank = (TextView) findViewById(R.id.blank);
+        mPaf = (TextView) findViewById(R.id.paf);
         mNext = (Button) findViewById(R.id.next);
         mPrev = (Button) findViewById(R.id.back);
         mCek = (Button) findViewById(R.id.scorecek);
@@ -48,6 +50,7 @@ public class QuizActivity extends AppCompatActivity {
                 sAnswer.getText().clear();
             }
         });
+
 
 
         mCek.setOnClickListener(new View.OnClickListener() {
@@ -101,6 +104,12 @@ public class QuizActivity extends AppCompatActivity {
     private void updateQuestion(){
         mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestinNumber));
         mAnswer = mQuestionLibrary.getCorrectAnswer(mQuestinNumber);
+
+        String clues = mAnswer;
+        int iC = clues.length();
+        String text2 = clues.replaceAll("[a-zA-Z0-9]","_ ");
+            mblank.setText(text2);
+
         if (mQuestinNumber !=4) {
             mQuestinNumber++;
         }else {
