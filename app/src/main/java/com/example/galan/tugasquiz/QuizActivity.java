@@ -42,15 +42,6 @@ public class QuizActivity extends AppCompatActivity {
         mCek = (Button) findViewById(R.id.scorecek);
         updateQuestion();
 
-
-        String str1 = mAnswer;
-        int i = str1.length();
-        for (int x=0; x<=i;) {
-            mblank.setText(i);
-            x++;
-        }
-
-
         sAnswer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
