@@ -43,11 +43,19 @@
         android:layout_marginBottom="40dp"
         android:id="@+id/question"/>
 
+    <TextView
+        android:text="TextView"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/blank" />
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:textAlignment="center"
+        android:text="Your Answer..."
         android:ems="10"
         android:id="@+id/jawaban" />
 

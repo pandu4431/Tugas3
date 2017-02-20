@@ -22,11 +22,11 @@ public class QuizActivity extends AppCompatActivity {
     private Button mNext;
     private Button mPrev;
     private Button mCek;
+    private TextView mblank;
 
     private String mAnswer;
     private int mScore = 0;
     private int mQuestinNumber = 0;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +36,20 @@ public class QuizActivity extends AppCompatActivity {
         mQuestionView = (TextView)findViewById(R.id.question);
         mButtonChoices1 = (Button) findViewById(R.id.submit);
         sAnswer = (EditText) findViewById(R.id.jawaban);
+        mblank = (TextView) findViewById(R.id.blank);
         mNext = (Button) findViewById(R.id.next);
         mPrev = (Button) findViewById(R.id.back);
         mCek = (Button) findViewById(R.id.scorecek);
         updateQuestion();
+
+
+        String str1 = mAnswer;
+        int i = str1.length();
+        for (int x=0; x<=i;) {
+            mblank.setText(i);
+            x++;
+        }
+
 
         sAnswer.setOnClickListener(new View.OnClickListener() {
             @Override
